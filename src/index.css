@@ -173,3 +173,8 @@ tbody tr:nth-child(odd) {
   font-size: 200%;
 }
 
+.error-p {
+  color: rgb(184, 0, 0);
+  font-weight: 800;
+  font-size: 150%;
+}

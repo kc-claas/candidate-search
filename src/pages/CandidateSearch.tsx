@@ -13,13 +13,20 @@ const CandidateSearch = () => {
 
   const getUserArray = async ()=>{ 
     const users:Candidate[] = await searchGithub();
+    console.log
     setCandidates(users);
   };
 
   const getUser = async ()=>{
     try {    
       const user:Candidate = await searchGithubUser(candidates[current].login);
-      setCandidate(user);
+      if (user.login) {
+        setCandidate(user)
+      }
+      else {
+        console.log(`couldn't fetch profile from github api, skipping to next`); 
+        setCurrent(current+1)
+      }
     } catch (error) {
       setCandidate(undefined)
     }
@@ -51,9 +58,8 @@ const CandidateSearch = () => {
   return (
     <div className='container'>
       <h1>Candidate Search</h1>
-      { candidate? 
-        (candidate.login? (
-          <section className='candidate-container'>
+      {candidate ? 
+        ( <section className='candidate-container'>
             <div className='candidate'>
               <img className='candidate-img' src={candidate.avatar_url} alt="avatar"/>
               <div className='candidate-info'> 
@@ -70,13 +76,9 @@ const CandidateSearch = () => {
               <button className="accept-btn" onClick={handleSave}>+</button>
             </div>
           </section>)
-        :(
-          <>
-            <p className='error-p'>Whoops! This profile's missing, please try again.</p> 
-            <button className="reject-btn" onClick={handleDiscard}>-</button>
-          </>
-        ))
-      : (<p className='error-p'>No more candidates available</p>)}
+      : (current >= candidates.length) && (candidates.length > 0)? (<p className='error-p'>No more candidates available</p>)
+      : <></>
+      }
     </div>
   );
 };
