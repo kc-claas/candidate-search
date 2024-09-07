@@ -49,27 +49,34 @@ const CandidateSearch = () => {
 
 
   return (
-    <div>
+    <div className='container'>
       <h1>Candidate Search</h1>
       { candidate? 
         (candidate.login? (
-          <section>
-            <img src={candidate.avatar_url}/>
-            <p>{candidate.name} <span>({candidate.login})</span></p>
-            <p>Location:{candidate.location}</p>
-            <p>Email:{candidate.email}</p>
-            <p>Company:{candidate.company}</p>
-            <p>Bio:{candidate.bio}</p>
-            <button onClick={handleDiscard}>-</button>
-            <button onClick={handleSave}>+</button>
+          <section className='candidate-container'>
+            <div className='candidate'>
+              <img className='candidate-img' src={candidate.avatar_url} alt="avatar"/>
+              <div className='candidate-info'> 
+                <p>{candidate.name} <span>({candidate.login})</span></p>
+                <a href={`${candidate.html_url}`}>({candidate.html_url})</a>
+                <p>Location: {candidate.location}</p>
+                <p>Email: {candidate.email}</p>
+                <p>Company: {candidate.company}</p>
+                <p>Bio: {candidate.bio}</p>
+              </div>
+            </div>
+            <div className='btn-container'>
+              <button className="reject-btn" onClick={handleDiscard}>-</button>
+              <button className="accept-btn" onClick={handleSave}>+</button>
+            </div>
           </section>)
         :(
           <>
-            <p>Whoops! No profile found, try again.</p> 
-            <button onClick={handleDiscard}>-</button>
+            <p className='error-p'>Whoops! This profile's missing, please try again.</p> 
+            <button className="reject-btn" onClick={handleDiscard}>-</button>
           </>
         ))
-      : (<p>No more candidates available</p>)}
+      : (<p className='error-p'>No more candidates available</p>)}
     </div>
   );
 };

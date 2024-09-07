@@ -6,7 +6,7 @@ interface Candidate {
     location: string | null,
     avatar_url: string,
     email: string | null,
-    htmlUrl: string,
+    html_url: string,
     company: string | null,
     bio: string | null
 }
