@@ -13,7 +13,6 @@ const CandidateSearch = () => {
 
   const getUserArray = async ()=>{ 
     const users:Candidate[] = await searchGithub();
-    console.log
     setCandidates(users);
   };
 
