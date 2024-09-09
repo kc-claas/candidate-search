@@ -1,33 +1,20 @@
-# React + TypeScript + Vite
+# Candidate Search
+[![Static Badge](https://img.shields.io/badge/License-MIT-blue)](./LICENSE)
+## Description
+This application can be used to find candidates and store candidates from among github users.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Table of Contents
+- [Usage](#usage)
+- [License](#license)
+- [Questions](#questions)
 
-Currently, two official plugins are available:
+## Usage
+To use, navigate to the deployed site: [https://candidate-search-f71n.onrender.com/](https://candidate-search-f71n.onrender.com/). On the home page, users are displayed. Clicking on the "+" button will save them to your list of potential candidates and display the next user, while clicking the "-" button will simply advance to the next user. Clicking on the potential candidates label on the navigation bar will take you to a table listing your saved potential candidates, who can be removed from the list by clicking the "-" button in their row.
 
-* [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md), which uses [Babel](https://babeljs.io/) for Fast Refresh
-* [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc), which uses [SWC](https://swc.rs/) for Fast Refresh
+## License
+This application is covered under the [MIT](./LICENSE) license
 
-## Expanding the ESLint configuration
+## Questions
+Github: [kc-claas](https://github.com/kc-claas)
 
-If you're developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-* Configure the top-level `parserOptions` property as follows:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-* Replace `plugin:@typescript-eslint/recommended` with `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`.
-* Optionally, add `plugin:@typescript-eslint/stylistic-type-checked`.
-* Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` and `plugin:react/jsx-runtime` to the `extends` list.
-
----
-© 2024 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+For additional questions, contact keithclaas@gmail.com
