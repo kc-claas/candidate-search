@@ -1,7 +1,9 @@
 # Candidate Search
 [![Static Badge](https://img.shields.io/badge/License-MIT-blue)](./LICENSE)
 ## Description
-This application can be used to find candidates and store candidates from among github users.
+This application can be used to find candidates from among github users. Candidates can then be stored for later review, and dismissed from this stored list if desired.
+
+A screenshot of the application can be found [here](./assets/Screenshot.png)
 
 ## Table of Contents
 - [Usage](#usage)
